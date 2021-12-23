@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/index_img/icon.png">
+  <link rel="icon" href="/img/index_img/icon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  
+    <meta name="description" content="">
+  
+  <meta name="author" content="John Doe/Orange Sugar">
+  <meta name="keywords" content="">
+  
+  <title>个人博客构建指南(Personal Blog Building) - OrangeSugar&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"orangesugar.gitee.io","root":"/","version":"1.8.8","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="OrangeSugar's Blog" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>OrangeSugar</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/blog_img/code.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="个人博客构建指南(Personal Blog Building)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-15 21:37" pubdate>
+        2021年3月15日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      809 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      9
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">个人博客构建指南(Personal Blog Building)</h1>
+            
+            <div class="markdown-body">
+              <meta name="referrer" content="no-referrer"/>
+
+<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>安装构建网站运行环境的软件类</p>
+<img src="http://ww1.sinaimg.cn/large/005JoKZCgy1gol5hqv0d3j309l03ga9z.jpg" srcset="/img/loading.gif" style="zoom:80%">
+
+<p><br>网站由<strong>hexo</strong>生成及编译，部署于<strong>gitee</strong>上。没有选择<strong>github</strong>，主要因为多数人反应<strong>github</strong>存在网络问题(被墙了)，在国内想要加载架构在<strong>github</strong>上的服务器很容易404，大部分情况需要vpn。</p>
+<h2 id="1-安装NodeJS环境"><a href="#1-安装NodeJS环境" class="headerlink" title="1.安装NodeJS环境"></a>1.安装NodeJS环境</h2><p>在命令行<strong>cmd</strong>中检测Node.js环境是否成功安装。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment">#分别输入下列三段命令，有版本号即表示安装成功</span><br><span class="hljs-string">node</span> <span class="hljs-string">-v</span><br><span class="hljs-string">npm</span>  <span class="hljs-string">-v</span><br><span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">-g</span> <span class="hljs-string">cnpm</span> <span class="hljs-string">--registry=https://registry.npm.taobao.org</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="2-安装Hexo"><a href="#2-安装Hexo" class="headerlink" title="2.安装Hexo"></a>2.安装Hexo</h2><p>进入<strong>Hexo</strong>官网 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a></p>
+<center><img src="http://ww1.sinaimg.cn/large/005JoKZCgy1gol72d31i7j31hc0pwaaz.jpg" srcset="/img/loading.gif" style="zoom:80%"></center>
+
+<p><br>在命令行<strong>cmd</strong>中输入首页的代码</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">hexo-cli</span> <span class="hljs-string">-g</span><br></code></pre></td></tr></table></figure>
+
+<p>安装成功后创建网站目录，最好创建在默认位置<u>C:\Users\username</u>，注意，文件夹命名后缀需添加blog，例：xxxblog，否则在下一步注入hexo会出现错误。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">hexo</span> <span class="hljs-string">init</span> <span class="hljs-string">xxxxblog</span> <span class="hljs-comment">#xxxx即自定义的文件名</span><br><span class="hljs-string">cd</span> <span class="hljs-string">xxxxblog</span> <span class="hljs-comment">#使cmd指令进入指定文件夹中</span><br><span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-comment">#开始注入</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="创建本地网站"><a href="#创建本地网站" class="headerlink" title="创建本地网站"></a>创建本地网站</h1><p><strong>核心三段式代码</strong>（从该步骤开始<strong>cmd</strong>指令必须在网站文件夹目录下完成）</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">hexo</span> <span class="hljs-string">c</span> <span class="hljs-comment">#clean清理缓存</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">g</span> <span class="hljs-comment">#generate生成缓存</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">s</span> <span class="hljs-comment">#server在本地运行测试</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="http://ww1.sinaimg.cn/large/005JoKZCgy1golq35cwi4j30qb0c30sq.jpg" srcset="/img/loading.gif"></p>
+<p>打开<strong>cmd</strong>提供的local网址，本地网站创建成功</p>
+<p><img src="http://ww1.sinaimg.cn/large/005JoKZCgy1golq6l0fg5j30tf0dhwjl.jpg" srcset="/img/loading.gif"></p>
+<h1 id="将网站部署于Gitee"><a href="#将网站部署于Gitee" class="headerlink" title="将网站部署于Gitee"></a>将网站部署于Gitee</h1><h2 id="1-注入Gitee设置"><a href="#1-注入Gitee设置" class="headerlink" title="1.注入Gitee设置"></a>1.注入Gitee设置</h2><p>注册<strong>Gitee</strong>账号，绑定邮箱，新建仓库，仓库名称和路径应保持命名一致，以避免不必要的麻烦，语言可随便选，其他选项保持不变，点击创建。</p>
+<p>下一步开始注入Git全局设置，在<strong>cmd</strong>中分别输入<strong>Gitee</strong>提供的两行代码即可。</p>
+<p><img src="http://ww1.sinaimg.cn/large/005JoKZCgy1golqfaltgyj30ys0b5gom.jpg" srcset="/img/loading.gif"></p>
+<h2 id="2-获取密钥"><a href="#2-获取密钥" class="headerlink" title="2.获取密钥"></a>2.获取密钥</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">ssh-keygen</span> <span class="hljs-string">-t</span> <span class="hljs-string">rsa</span> <span class="hljs-string">-C</span> <span class="hljs-string">&quot;xxxxx&quot;</span> <span class="hljs-comment">#xxxx为你的邮箱</span><br></code></pre></td></tr></table></figure>
+
+<p>等待片刻后密钥会生成在网站文件夹同级目录，通常为<u>C:\Users\username</u>中，打开.ssh文件夹，用记事本打开名为<strong>id_rsa</strong>的PUB文件，全选并复制。在<strong>Gitee</strong>个人界面进入安全设置中的SSH公钥，粘贴公钥并确定即可。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-string">hexo-deployer-gil</span> <span class="hljs-string">--save</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="3-部署"><a href="#3-部署" class="headerlink" title="3.部署"></a>3.部署</h2><p>在管理中初始化SVN访问，保存并进入服务中的<strong>Gitee Pages</strong></p>
+<p><img src="http://ww1.sinaimg.cn/large/005JoKZCgy1golqwe1xeqj30hk07imym.jpg" srcset="/img/loading.gif"></p>
+<p>勾选强制使用HTTPS，点击更新，稍等你的个人域名便生成了，但此时点进去仍是404，那是因为我们还有一些设置没有完成。</p>
+<h2 id="4-更改设置"><a href="#4-更改设置" class="headerlink" title="4.更改设置"></a>4.更改设置</h2><p>用我们安装好的<strong>Visual Studio Code</strong>打开网站目录下的**_config.yml**文件，划到最低，更改代码</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">https://gitee.com/xxxx/xxxx.git</span>  <span class="hljs-comment">#网址在下图位置</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure>
+
+<p><img src="http://ww1.sinaimg.cn/large/005JoKZCgy1golr3mvom0j30zg09vdir.jpg" srcset="/img/loading.gif"></p>
+<p>这些需要更改的代码上一行是设置网页主题，关于如何更换主题本篇暂且不讲。</p>
+<p>拉到顶部，更改<strong>url</strong>那一行的网址为刚刚<strong>Gitee</strong>为你生成的个人域名，把<strong>language</strong>改成<strong>zh-cn</strong>。</p>
+<p>设置完成，保存，进入cmd，输入三段式代码+部署代码</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-string">hexo</span> <span class="hljs-string">c</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">g</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">s</span><br><span class="hljs-string">hexo</span> <span class="hljs-string">d</span><br></code></pre></td></tr></table></figure>
+
+<p>再次点击更新，网站建成。</p>
+<br>
+
+<blockquote>
+<p>参考资料：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Np4y1i7r5">使用Hexo和码云Gitee免费搭建个人博客保姆级教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42365530/article/details/107750003">Hexo+gitee：30分钟搭建一个自己的个人博客网站</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?from=search&seid=6442481908646005998">手把手教你从0开始搭建自己的个人博客 |无坑版视频教程| hexo</a></p>
+</blockquote>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Tech/">Tech</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/HTML/">HTML</a>
+                    
+                      <a class="hover-with-bg" href="/tags/VS/">VS</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/03/16/document_02/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Zbrush人像雕刻</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/03/15/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Orange</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
